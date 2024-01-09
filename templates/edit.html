@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Edit</title>
+{% endblock %}
+
+{% block body %}
+  <h1>Edit recipe</h1>
+   <form action='/recipes/edit/{{ recipe.id }}' method='POST'>
+    Title: <input class="form-control" type='text' name='title' id='title' value="{{ recipe.title }}"><br>
+    <div class="mb-3">
+        <label for="description" class="form-label">Recipe description</label>
+        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Enter description">{{ recipe.description }}</textarea>
+    </div>
+    <br>
+    <input type='submit' class="btn btn-success" value='Save'>
+   </form>
+{% endblock %}
